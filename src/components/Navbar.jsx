@@ -1,12 +1,13 @@
 import { useState } from "react"
-
+import { Image } from '@imagekit/react';
+import Images from "./Images";
 function Navbar() {
     const [open, setOpen]= useState(false)
     return (
         <div className="w-full h-16 md:h-20 flex items-center justify-between">
             {/* LOGO */}
             <div className="flex items-center gap-4 text-2xl font-bold">
-                <img src="/logo.png" className="w-8 h-8" alt="" />
+                <Images src="logo.png" alt="Lamablog" w={32} h={32}/>
                 <span>lamablog</span>
             </div>
             {/* MOBILE MENU */}
@@ -16,7 +17,7 @@ function Navbar() {
                     {open ? "X": "="}
                 </div>
                 {/* MOBLIE LINK LIST */}
-                <div className={`w-full h-screen flex flex-col items-center gap-8 font-medium justify-center absolute top-16 transition-all ease-in-out ${open ? "-right-0":"-right-[100%]"}`}>
+                <div className={`w-full h-screen flex flex-col items-center gap-8 font-medium text-lg justify-center absolute top-16 transition-all ease-in-out ${open ? "-right-0":"-right-[100%]"}`}>
                     <a href="/">Home</a>
                     <a href="/">Trending</a>
                     <a href="/">Most Popular</a>
