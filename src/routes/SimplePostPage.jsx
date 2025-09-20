@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Image from '../components/Images'
 import PostMenuActions from '../components/PostMenuActions'
 import Search from '../components/Search'
+import Comments from '../components/Comments'
 
 function SimplePostPage() {
     return (
@@ -131,6 +132,7 @@ function SimplePostPage() {
                     <Search/>
                 </div>
             </div>
+            <Comments/>
         </div>
     )
 }
