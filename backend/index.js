@@ -6,8 +6,9 @@ import commentRouter from "./routes/comment.route.js"
 import webHookRouter from "./routes/webhook.route.js"
 
 
-const app=express()
-app.use(express.json())
+const app=express();
+app.use("/webhooks", webHookRouter);
+app.use(express.json());    
 
 // app.get("/test", (req, res)=>{
 //     res.status(200).send("it works!")
@@ -15,7 +16,7 @@ app.use(express.json())
 app.use("/users", userRouter)
 app.use("/posts", postRouter)
 app.use("/comments", commentRouter)
-app.use("/webhooks", webHookRouter)
+
 
 app.use((error,req,res,next)=>{
 
